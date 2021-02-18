@@ -63,7 +63,7 @@ const showImages = (images) => {
 let slideIndex = 0;
 const selectItem = (event, img) => {
   let element = event.target;
-  element.classList.add('added');
+  element.classList.toggle('added');
  
   let item = sliders.indexOf(img);
   if (item === -1) {
@@ -72,8 +72,8 @@ const selectItem = (event, img) => {
   
   else {
     // alert('Hey, Already added !')
-    element.classList.remove('added');
-    sliders.pop(img);
+    // element.classList.remove('added');
+    sliders.splice(item, 1);
   }
 }
 var timer
